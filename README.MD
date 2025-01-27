@@ -1,12 +1,21 @@
 * Neovim init files
 Includes Neovim configuration files for my personal config
 
-After cloning the repo install the packer.nvim plugin manager
+- First off, create a `.config` file in the home directory if not present. Then cloe the repo
+```shell
+cd ~
+
+mkdir .config
+
+git clone https://github.com/ebzkurt1/nvim_config.git  nvim
+```
+
+- After cloning the repo install the `packer.nvim` plugin manager
 ```shell
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.neovim
 ```
-Then source the packer.lua file with `:so`
+- Then source the packer.lua file with `:so`
 
 ## Building from source
 The usual method of `apt-get install` does not properly work on `aarch64` architecture devices. For the plugins and
@@ -28,7 +37,20 @@ sudo make install
 
 nvim
 ```
-You may need to reboot the device before being able to use Neovim.
+
+- Install ripgrep for the `telescope.nvim` greps to work.
+```shell
+sudo apt-get install ripgrep
+```
+
+- Install `npm` for the linters
+```shell
+sudo apt install npm
+```
+
+- You may need to reboot the device before being able to use Neovim.
+- Source the file and do `PackerSync`
+
 
 ## Copilotq's Neovim configuration
 Install the neovim extension for Neovim. This is a must for the plugins to work.
